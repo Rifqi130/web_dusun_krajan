@@ -1,0 +1,552 @@
+/* Responsive CSS untuk halaman struktur pengurus */
+
+/* Base styles */
+.org-structure-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.org-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0.8rem auto;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.org-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: #e0e0e0;
+}
+
+.org-card h5 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.org-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+.org-card .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Connector lines */
+.vertical-line {
+  width: 2px;
+  background: #6c757d;
+  margin: 0 auto;
+}
+
+/* Desktop styles (default) - Fixed untuk menampilkan konten */
+@media (min-width: 769px) {
+  .org-structure-container {
+    padding: 2rem 20px;
+    min-height: auto;
+  }
+
+  /* Ensure all sections are properly displayed */
+  .kadus-section,
+  .rw-section,
+  .rt-section,
+  .pemuda-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .kadus-section {
+    width: 320px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .rw-section {
+    width: 320px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .rt-section {
+    margin: 3rem 0;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  /* Fix untuk RT section - ensure desktop layout shows */
+  .rt-section .d-none.d-md-block {
+    display: block !important;
+  }
+
+  .rt-section .d-md-none {
+    display: none !important;
+  }
+
+  .rt-section .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .rt-section .row > [class*="col-"] {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 220px;
+    max-width: 240px;
+  }
+
+  .rt-card {
+    width: 100%;
+    min-height: 180px;
+    margin: 0;
+  }
+
+  .pemuda-section {
+    width: 320px;
+    margin: 2.5rem auto 0;
+  }
+
+  /* Improved connector line spacing */
+  .vertical-line {
+    margin: 1.5rem auto;
+    height: 40px;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) and (min-width: 577px) {
+  .org-structure-container {
+    padding: 0 20px;
+  }
+
+  .org-card {
+    margin: 1rem auto;
+    max-width: 350px;
+  }
+
+  .kadus-section,
+  .rw-section,
+  .pemuda-section {
+    width: 100%;
+    max-width: 350px;
+    margin: 1.2rem auto;
+  }
+
+  .rt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .rt-card {
+    width: 100%;
+    min-height: 110px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 576px) {
+  .org-structure-container {
+    padding: 0 15px;
+  }
+
+  .org-card {
+    margin: 1rem auto;
+    max-width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+  }
+
+  .org-card h5 {
+    font-size: 1rem;
+  }
+
+  .org-card p {
+    font-size: 0.9rem;
+  }
+
+  .org-card .badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    margin-top: 0.3rem;
+  }
+
+  .kadus-section,
+  .rw-section,
+  .pemuda-section {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .rt-section {
+    margin: 1.5rem 0;
+  }
+
+  .rt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .rt-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 90px;
+  }
+
+  .vertical-line {
+    height: 25px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 400px) {
+  .org-structure-container {
+    padding: 0 10px;
+  }
+
+  .org-card {
+    margin: 0.8rem auto;
+    padding: 0.8rem;
+    min-height: 85px;
+  }
+
+  .org-card h5 {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .org-card p {
+    font-size: 0.85rem;
+  }
+
+  .org-card .badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    line-height: 1.2;
+  }
+
+  .vertical-line {
+    height: 20px;
+  }
+}
+
+/* Navbar responsif improvements */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .navbar-brand img {
+    height: 28px !important;
+    margin-right: 6px !important;
+  }
+
+  .navbar-brand span {
+    display: block;
+    line-height: 1.2;
+  }
+
+  /* Perbaikan navbar collapse */
+  .navbar-collapse {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem !important;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .navbar-nav .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+
+  .navbar-brand img {
+    height: 24px !important;
+  }
+}
+
+/* Hero section responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 280px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 250px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-section h2 {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Responsive styles untuk halaman aset dan umkm */
+@media (max-width: 768px) {
+  /* Perbaikan untuk card aset */
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1.1rem !important;
+  }
+
+  .text-muted {
+    font-size: 0.9rem !important;
+  }
+
+  /* Responsive containers */
+  .container.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+
+  .g-4 {
+    gap: 1rem !important;
+  }
+
+  /* Perbaikan spacing untuk mobile */
+  body {
+    padding-top: 0 !important;
+  }
+
+  .navbar {
+    z-index: 1030;
+  }
+
+  .hero-section {
+    margin-top: 0 !important;
+  }
+
+  /* Card responsive di halaman aset */
+  .col-12.col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra responsive untuk mobile kecil */
+  .card-img-top {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1rem !important;
+  }
+
+  .display-3 {
+    font-size: 1.8rem !important;
+  }
+
+  .fs-2 {
+    font-size: 1.3rem !important;
+  }
+
+  /* Perbaikan untuk konten UMKM */
+  .col-12.col-md-6 h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .col-12.col-md-6 p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Perbaikan container */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Card improvements */
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  /* Image responsive fixes */
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Row spacing fixes */
+  .row.g-4 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .row.g-4 > * {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Base responsive fixes untuk semua halaman */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Perbaikan overflow untuk mobile */
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70vw;
+  }
+
+  .navbar-brand img {
+    height: 20px !important;
+    margin-right: 4px !important;
+  }
+
+  .hero-section {
+    height: 220px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+  }
+
+  .hero-section h2 {
+    font-size: 1.1rem !important;
+  }
+
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Fix untuk card yang terlalu lebar */
+  .card {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .card-title {
+    font-size: 0.95rem !important;
+    line-height: 1.3;
+  }
+
+  .card-text,
+  .text-muted {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Extra small screens (360px and below) */
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 0.8rem !important;
+    max-width: 65vw;
+  }
+
+  .navbar-brand img {
+    height: 18px !important;
+    margin-right: 3px !important;
+  }
+
+  .hero-section {
+    height: 200px !important;
+    padding: 1rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .hero-section h2 {
+    font-size: 1rem !important;
+  }
+
+  .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .card-title {
+    font-size: 0.9rem !important;
+  }
+
+  .card-text,
+  .text-muted {
+    font-size: 0.8rem !important;
+  }
+
+  .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}

@@ -1,0 +1,456 @@
+/* UMKM Scroll Animations */
+
+/* Base animation styles */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation delays for staggered effect */
+.fade-in-up.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-in-up.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Image specific animations */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale animation for images */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease-out;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Text content animations */
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.slide-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth hover effects */
+.umkm-card {
+  transition: all 0.3s ease;
+}
+
+.umkm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.umkm-image {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.umkm-image:hover img {
+  transform: scale(1.05);
+}
+
+.umkm-image img {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Loading animation enhancement */
+.loading-bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .fade-in-up,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in,
+  .slide-in-up {
+    transform: translateY(30px);
+    transition-duration: 0.6s;
+  }
+
+  .fade-in-left.visible,
+  .fade-in-right.visible {
+    transform: translateY(0);
+  }
+}
+
+/* Smooth section dividers */
+.umkm-section {
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.umkm-section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced card styling */
+.umkm-content-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.umkm-content-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title animations */
+.umkm-title {
+  position: relative;
+  display: inline-block;
+}
+
+.umkm-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  transition: width 0.8s ease;
+}
+
+.umkm-title.visible::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .umkm-section {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+
+  .umkm-content-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}
+
+/* Search section styling */
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  border: 1px solid #dee2e6;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-box:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Katalog section styling */
+.katalog-section {
+  margin-bottom: 3rem;
+}
+
+.katalog-item {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #495057;
+  display: block;
+  height: 100%;
+}
+
+.katalog-item:hover {
+  background: #0d6efd;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  text-decoration: none;
+}
+
+.katalog-item h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.katalog-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Search results highlighting */
+.search-highlight {
+  background-color: #fff3cd;
+  border: 2px solid #ffc107;
+  animation: highlight-pulse 2s ease-in-out;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    border-color: #ffc107;
+  }
+  50% {
+    border-color: #ffca2c;
+  }
+  100% {
+    border-color: #ffc107;
+  }
+}
+
+/* UMKM Card Styling */
+.umkm-card-container {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.umkm-card-container:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.umkm-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.umkm-card-container:hover .umkm-card-image {
+  transform: scale(1.05);
+}
+
+.umkm-card-body {
+  padding: 1.5rem;
+}
+
+.umkm-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 0.5rem;
+}
+
+.umkm-card-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.umkm-card-description.truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-read-more {
+  background: linear-gradient(45deg, #0d6efd, #0056b3);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+.btn-read-more:hover {
+  background: linear-gradient(45deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+  color: white;
+}
+
+/* Modal Styling */
+.umkm-modal .modal-dialog {
+  max-width: 800px;
+}
+
+.umkm-modal .modal-content {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.umkm-modal .modal-header {
+  background: linear-gradient(45deg, #0d6efd, #0056b3);
+  color: white;
+  border: none;
+  padding: 1.5rem;
+}
+
+.umkm-modal .modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.umkm-modal .btn-close {
+  filter: invert(1);
+}
+
+.umkm-modal .modal-body {
+  padding: 2rem;
+}
+
+.umkm-modal-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.umkm-modal-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+/* Responsive card adjustments */
+@media (max-width: 768px) {
+  .umkm-card-body {
+    padding: 1rem;
+  }
+
+  .umkm-card-title {
+    font-size: 1.3rem;
+  }
+
+  .umkm-card-image {
+    height: 200px;
+  }
+
+  .umkm-modal .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+/* Animation for modal */
+.umkm-modal.fade .modal-dialog {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-out;
+}
+
+.umkm-modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* Search highlight effect */
+.search-highlight .umkm-card-container {
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.4);
+  transform: scale(1.02);
+  border: 2px solid #0d6efd;
+}
+
+/* Grid layout improvements */
+.umkm-card-container.h-100 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.umkm-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.umkm-card-description {
+  flex: 1;
+}
+
+/* Ensure consistent card heights in grid */
+@media (min-width: 992px) {
+  .row .col-lg-4 .umkm-card-container {
+    height: 100%;
+  }
+}

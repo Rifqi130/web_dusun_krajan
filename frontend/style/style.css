@@ -1,0 +1,457 @@
+.struktur-foto {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #1976d2;
+  /* Struktur Kepengurusan Dusun */
+  .kepengurusan-structure {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .struktur-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+    padding: 22px 28px;
+    margin: 12px 0;
+    min-width: 180px;
+    min-height: 220px;
+    text-align: left;
+    border: 2.5px solid #1976d2;
+    font-size: 1.1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .struktur-foto {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #1976d2;
+  }
+
+  .struktur-card .fw-bold {
+    margin-top: 80px;
+    margin-left: 0;
+    color: #1976d2;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
+  }
+  .struktur-card .small {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: 18px;
+    text-align: left;
+  }
+}
+.struktur-card .fw-bold {
+  color: #1976d2;
+  font-size: 1.15rem;
+}
+.struktur-card .small {
+  color: #888;
+  font-size: 0.95rem;
+}
+/* Modern Homepage Styles */
+.modern-card {
+  background: #fff;
+  border-radius: 1rem;
+}
+
+.highlight-title {
+  color: #ffb300;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* General Responsive Improvements */
+.navbar-brand {
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.hero-section {
+  position: relative;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed;
+}
+
+/* Ensure images are always responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card improvements */
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Better spacing for sections */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar responsive */
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .navbar-brand span {
+    display: block;
+    line-height: 1.2;
+  }
+
+  .navbar-brand img {
+    height: 28px !important;
+    margin-right: 6px !important;
+  }
+
+  /* Hero section responsive */
+  .hero-section {
+    height: 280px !important;
+    margin-top: 70px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Content spacing */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Cards responsive */
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .card-title {
+    font-size: 1.1rem !important;
+  }
+
+  .card-text {
+    font-size: 0.9rem !important;
+  }
+
+  /* Gallery images */
+  .img-fluid {
+    margin-bottom: 1rem;
+  }
+
+  /* Section titles */
+  h3.fw-bold {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Gallery responsive */
+  .row.g-3 .col-6 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Footer responsive */
+  .footer .col-md-6 {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small devices */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+
+  .hero-section {
+    height: 240px !important;
+    margin-top: 65px !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-section h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Text adjustments for very small screens */
+  .card-title {
+    font-size: 1rem !important;
+  }
+
+  .card-text {
+    font-size: 0.85rem !important;
+  }
+
+  /* Navbar brand even smaller */
+  .navbar-brand img {
+    height: 24px !important;
+  }
+
+  /* Better spacing for small screens */
+  .g-4 {
+    --bs-gutter-x: 1rem !important;
+    --bs-gutter-y: 1rem !important;
+  }
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #ffb300 0%, #1976d2 100%);
+  border-radius: 2px;
+  opacity: 0.2;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 40px;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-desc {
+  margin-left: 60px;
+  font-size: 1.05rem;
+  color: #333;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232527 0%, #3a3d40 100%);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.card {
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+.card-title {
+  letter-spacing: 1px;
+}
+.timeline .badge {
+  font-size: 1rem;
+  padding: 0.7em 1em;
+  border-radius: 1em;
+}
+.timeline li span {
+  font-size: 1.08rem;
+}
+@media (max-width: 500px) {
+  .card-body {
+    padding: 1.2rem !important;
+  }
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+/* Body & background */
+body {
+  background-color: #232629 !important;
+  color: #f5f5f5 !important;
+  font-family: "Montserrat", Arial, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar,
+.offcanvas {
+  background-color: #232629 !important;
+  border-bottom: 1px solid #232629;
+}
+
+.navbar .nav-link {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: #ff4c4c !important;
+}
+
+/* Judul */
+h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #232629;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  color: #fff;
+  font-weight: 600;
+  background: #232629;
+  border-bottom: 2px solid #444;
+  text-align: center;
+}
+
+.table tbody td {
+  color: #f5f5f5;
+  vertical-align: middle;
+  text-align: center;
+  background: #232629;
+  border-top: 1px solid #333;
+  font-size: 1rem;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #232629;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #24272a;
+}
+
+/* House color headings */
+.text-warning.text-center {
+  color: #ffc107 !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.text-success.text-center {
+  color: #4caf50 !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.text-primary.text-center {
+  color: #2196f3 !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Responsive table columns */
+@media (max-width: 991px) {
+  .row.justify-content-around > div[class^="col-"] {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Register form */
+#register-form {
+  background: #232629;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+}
+
+#register-form label {
+  color: #fff;
+  font-weight: 500;
+}
+
+#register-form .form-control,
+#register-form .form-select {
+  background: #181a1b;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+#register-form .btn-danger {
+  background: #ff4c4c;
+  border: none;
+  font-weight: 600;
+  padding: 8px 32px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+#register-form .btn-danger:hover {
+  background: #ff2323;
+}
+
+/* Optional: background illustration (bottom right) */
+body::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 350px;
+  height: 350px;
+  background: url("https://www.transparenttextures.com/patterns/geometry.png") repeat;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Optional: background illustration (bottom left) */
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 350px;
+  height: 350px;
+  background: url("https://www.transparenttextures.com/patterns/geometry.png") repeat;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}

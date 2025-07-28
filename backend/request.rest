@@ -1,0 +1,118 @@
+### Get all books
+GET http://localhost:5001/books
+
+### Create book
+POST http://localhost:5001/books
+Content-Type: application/json
+
+{
+  "judul": "Sihir Ampuh",
+  "tahun_terbit": "1927 SM"
+}
+
+### Update book
+PATCH http://localhost:5001/books/1
+Content-Type: application/json
+
+{
+  "judul": "Sihir Ampuh Updated",
+  "tahun_terbit": "1927 SM"
+}
+
+### Delete book
+DELETE http://localhost:5001/books/1
+
+### =============== PENDATAAN API ===============
+
+### Get all pendataan data
+GET http://localhost:5001/pendataan
+
+### Get pendataan by ID
+GET http://localhost:5001/pendataan/1
+
+### Create new pendataan data - Laki-laki
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 231,
+  "Pendataan": "Laki-laki"
+}
+
+### Create new pendataan data - Perempuan
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 230,
+  "Pendataan": "Perempuan"
+}
+
+### Create new pendataan data - Bayi
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 1,
+  "Pendataan": "Bayi (<1 Tahun)"
+}
+
+### Create new pendataan data - Balita
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 15,
+  "Pendataan": "Balita (1-5 tahun)"
+}
+
+### Create new pendataan data - Anak-anak
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 34,
+  "Pendataan": "Anak-anak (6-12 Tahun)"
+}
+
+### Create new pendataan data - Remaja
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 47,
+  "Pendataan": "Remaja (13-19 Tahun)"
+}
+
+### Create new pendataan data - Dewasa
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 251,
+  "Pendataan": "Dewasa (20-59 Tahun)"
+}
+
+### Create new pendataan data - Lansia
+POST http://localhost:5001/pendataan
+Content-Type: application/json
+
+{
+  "jumlah": 112,
+  "Pendataan": "Lansia (>60 Tahun)"
+}
+
+### Update pendataan data
+PATCH http://localhost:5001/pendataan/1
+Content-Type: application/json
+
+{
+  "jumlah": 235,
+  "Pendataan": "Laki-laki"
+}
+
+### Delete pendataan data
+DELETE http://localhost:5001/pendataan/1
+
+### Get statistics for charts
+GET http://localhost:5001/pendataan/statistics

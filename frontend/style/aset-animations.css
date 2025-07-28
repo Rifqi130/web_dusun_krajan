@@ -1,0 +1,239 @@
+/* Aset Scroll Animations CSS */
+
+/* Base animation styles */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation delays for staggered effect */
+.fade-in-up.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-in-up.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Scale animation */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease-out;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Text content animations */
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.slide-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced aset card animations */
+.aset-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aset-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Title animations */
+.aset-title {
+  position: relative;
+  display: inline-block;
+}
+
+.aset-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  transition: width 0.8s ease;
+}
+
+.aset-title.visible::after {
+  width: 100%;
+}
+
+/* Search highlight effect */
+.search-highlight {
+  animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgba(255, 193, 7, 0.3);
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+}
+
+/* Loading animation enhancement */
+.loading-bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced image hover effects */
+.aset-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.aset-card:hover .aset-img {
+  transform: scale(1.05);
+}
+
+/* Statistics section animations */
+.aset-stats {
+  transition: all 0.3s ease;
+}
+
+.aset-stats:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Search box animations */
+.search-box {
+  transition: all 0.3s ease;
+}
+
+.search-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Button hover animations */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Category badge animation */
+.category-badge {
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Modal animations */
+.modal.fade .modal-dialog {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .fade-in-up,
+  .scale-in,
+  .slide-in-up {
+    transform: translateY(30px);
+    transition-duration: 0.6s;
+  }
+
+  .aset-card:hover {
+    transform: translateY(-3px) !important;
+  }
+
+  .search-box:hover,
+  .aset-stats:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Smooth section transitions */
+.aset-section {
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.aset-section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced focus states for accessibility */
+.aset-card:focus-within {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Pulse animation for important elements */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

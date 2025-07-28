@@ -1,0 +1,56 @@
+/* Sticky Navbar Styles */
+.navbar.fixed-top {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  transition: all 0.3s ease;
+}
+
+/* Add padding to body to compensate for fixed navbar */
+body.has-fixed-navbar {
+  padding-top: 90px; /* Adjust based on navbar height */
+}
+
+/* Smooth transition for navbar collapse */
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Close mobile menu when scrolling */
+@media (max-width: 991.98px) {
+  .navbar-collapse.show {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Navbar brand responsive */
+.navbar-brand {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .navbar-brand span {
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Hero section adjustment for fixed navbar */
+.hero-section {
+  margin-top: -90px;
+  padding-top: 90px;
+}

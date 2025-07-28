@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Pengurus</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      /* Custom styles for pengurus management */
+      .pengurus-card {
+        transition: all 0.3s ease;
+        border: none !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .pengurus-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Button animations and effects */
+      .btn {
+        transition: all 0.3s ease;
+      }
+
+      .btn:active {
+        transform: scale(0.95);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: #0056b3 !important;
+        border-color: #0056b3 !important;
+        color: white !important;
+      }
+
+      .btn-danger:hover {
+        background-color: #d32f2f !important;
+        border-color: #d32f2f !important;
+      }
+
+      /* Loading animation */
+      .loading-spinner {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border: 0.25rem solid #f8f9fa;
+        border-radius: 50%;
+        border-top-color: #007bff;
+        animation: loading-spin 1s ease-in-out infinite;
+      }
+
+      @keyframes loading-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Animation for cards loading */
+      .card-fade-in {
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Table styling improvements */
+      .table th {
+        border-top: none;
+        font-weight: 600;
+        color: #495057;
+      }
+
+      .table td {
+        vertical-align: middle;
+      }
+
+      /* Mobile responsive improvements */
+      @media (max-width: 768px) {
+        .pengurus-card {
+          margin-bottom: 2rem;
+        }
+
+        .btn-sm {
+          font-size: 0.8rem;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .modal-dialog {
+          margin: 1rem;
+        }
+      }
+
+      /* Navbar mobile improvements */
+      @media (max-width: 991px) {
+        .navbar-collapse {
+          background-color: rgba(255, 255, 255, 0.98);
+          border-radius: 0 0 10px 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          margin-top: 10px;
+          padding: 1rem;
+          transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link {
+          padding: 0.75rem 1rem !important;
+          border-radius: 8px;
+          margin-bottom: 0.25rem;
+          transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+          background-color: #f8f9fa;
+          color: #2c5aa0 !important;
+        }
+
+        .navbar-nav .nav-link.active {
+          background-color: #2c5aa0;
+          color: white !important;
+        }
+
+        .navbar-toggler {
+          border: none;
+          padding: 0.25rem 0.5rem;
+          transition: all 0.2s ease;
+        }
+
+        .navbar-toggler:focus {
+          box-shadow: none;
+        }
+
+        .navbar-toggler:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Smooth navbar collapse animation */
+        .navbar-collapse.collapsing {
+          transition: height 0.35s ease;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" style="font-size: 1.5rem; letter-spacing: 0.5px">
+          <span style="color: #2c5aa0">Dusun Krajan</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2" href="admindashboard.html"> <i class="bi bi-speedometer2 me-1"></i>Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2" href="adminpendataan.html"> <i class="bi bi-bar-chart-fill me-1"></i>Admin Pendataan </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active px-3 py-2" href="adminpengurus.html"> <i class="bi bi-people me-1"></i>Pengurus </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2" href="adminaset.html"> <i class="bi bi-building me-1"></i>Aset Dusun </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2" href="adminumkm.html"> <i class="bi bi-shop me-1"></i>UMKM </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2" href="loginadmin.html"> <i class="bi bi-box-arrow-right me-1"></i>Logout </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative" style="background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; height: 200px">
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="display-4 fw-bold text-white mb-2" style="text-shadow: 2px 2px 8px #333">Admin Pengurus</h1>
+        <p class="fs-5 text-white" style="text-shadow: 2px 2px 8px #333">Kelola Data Pengurus Dusun Krajan</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+      <!-- Pengurus List Table -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card shadow-sm pengurus-card">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0"><i class="bi bi-people"></i> Daftar Pengurus</h5>
+            </div>
+            <div class="card-body">
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-hover align-middle text-center">
+                  <thead class="table-primary">
+                    <tr>
+                      <th>No</th>
+                      <th>Name</th>
+                      <th>Jabatan</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="member-list">
+                    <!-- Data will be rendered here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Modal -->
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <form id="editUserForm" class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel"><i class="bi bi-pencil-square"></i> Edit Pengurus</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeEditModal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="editName" class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="editName" required />
+              </div>
+              <div class="mb-3">
+                <label for="editJabatan" class="form-label">Jabatan <span class="text-danger">*</span></label>
+                <select class="form-control" id="editJabatan" required>
+                  <option value="Kepala Wilayah">Kepala Wilayah</option>
+                  <option value="Rw">Rw</option>
+                  <option value="Rt 1">Rt 1</option>
+                  <option value="Rt 2">Rt 2</option>
+                  <option value="Rt 3">Rt 3</option>
+                  <option value="Rt 4">Rt 4</option>
+                  <option value="Ketua Pemuda">Ketua Pemuda</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm pengurus-card">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0"><i class="bi bi-person-plus"></i> Register Pengurus Baru</h5>
+            </div>
+            <div class="card-body">
+              <form id="register-form">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="member-name" class="form-label">Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="member-name" required placeholder="Masukkan nama pengurus" />
+                  </div>
+                  <div class="col-12">
+                    <label for="jabatan" class="form-label">Jabatan <span class="text-danger">*</span></label>
+                    <select class="form-control" id="jabatan" required>
+                      <option value="">Pilih Jabatan</option>
+                      <option value="Kepala Wilayah">Kepala Wilayah</option>
+                      <option value="Rw">Rw</option>
+                      <option value="Rt 1">Rt 1</option>
+                      <option value="Rt 2">Rt 2</option>
+                      <option value="Rt 3">Rt 3</option>
+                      <option value="Rt 4">Rt 4</option>
+                      <option value="Ketua Pemuda">Ketua Pemuda</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mt-4 d-flex gap-2">
+                  <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Register Pengurus</button>
+                  <button type="reset" class="btn btn-outline-secondary"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+                </div>
+              </form>
+              <div class="mt-3">
+                <button class="btn btn-secondary" id="backDashboardBtn"><i class="bi bi-arrow-left"></i> Back to Dashboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white text-center py-4 mt-5 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+            <span class="text-muted">&copy; 2025 Dusun Kita. All rights reserved.</span><br />
+            <span class="text-muted" style="font-size: 0.9em">Admin Panel Pengurus</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Admin Pengurus JS -->
+    <script src="../js/admin-pengurus.js"></script>
+  </body>
+</html>
